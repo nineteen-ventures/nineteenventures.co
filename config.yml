@@ -55,7 +55,7 @@ params:
     profileMode:
           enabled: true
           title: Nineteen Ventures
-          subtitle: "Nineteen Ventures (NV) builds and scales delightful solo and micro businesses. We are people who care deeply about quality, customers, and integrity. We know who we are. We love what we do. We refuse to compromise on important things. We work towards excellence."
+          subtitle: "Nineteen Ventures (NV) builds and scales delightful solo and micro businesses. We are people who care deeply about quality, customers, and integrity. We know who we are. We love what we do. We refuse to compromise on important things."
           imageUrl: "nineteen-ventures-logo-square.png"
           imageWidth: 160
           imageHeight: 160
