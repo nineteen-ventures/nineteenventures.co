@@ -77,6 +77,19 @@
 
 {{- if (not site.Params.disableThemeToggle) }}
 <script>
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+        // Only auto-switch if user hasn't manually set a preference
+        if (!localStorage.getItem("pref-theme")) {
+            if (event.matches) {
+                document.body.classList.add('dark');
+            } else {
+                document.body.classList.remove('dark');
+            }
+        }
+    });
+
+    // Manual toggle button
     document.getElementById("theme-toggle").addEventListener("click", () => {
         if (document.body.className.includes("dark")) {
             document.body.classList.remove('dark');
@@ -86,7 +99,6 @@
             localStorage.setItem("pref-theme", 'dark');
         }
     })
-
 </script>
 {{- end }}
 
