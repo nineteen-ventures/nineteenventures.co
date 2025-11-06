@@ -1,18 +1,80 @@
-/* Hide dark logo by default (light mode) */
+/* Logo switching for dark mode */
 .profile-image-dark {
     display: none;
 }
 
-/* Show light logo by default */
 .profile-image-light {
     display: block;
 }
 
-/* When in dark mode, hide light logo and show dark logo */
 .dark .profile-image-light {
     display: none;
 }
 
 .dark .profile-image-dark {
+    display: block;
+}
+
+/* Dark mode background and colors */
+.dark {
+    --theme: #1d1e20;
+    --entry: #2e2e33;
+    --primary: rgba(255, 255, 255, 0.84);
+    --secondary: rgba(255, 255, 255, 0.56);
+    --tertiary: rgba(255, 255, 255, 0.16);
+    --content: rgba(255, 255, 255, 0.74);
+    --hljs-bg: #2e2e33;
+    --code-bg: #37383e;
+    --border: #5b5d67;
+}
+
+.dark body {
+    background: var(--theme);
+    color: var(--primary);
+}
+
+.dark .header {
+    background: var(--theme);
+}
+
+.dark .footer {
+    background: var(--theme);
+}
+
+.dark .nav {
+    background: var(--theme);
+}
+
+.dark .profile {
+    background: var(--entry);
+}
+
+/* Make sure theme toggle button is visible */
+#theme-toggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+#theme-toggle svg {
+    height: 18px;
+    width: 18px;
+}
+
+/* Show moon icon in light mode, sun icon in dark mode */
+.dark #theme-toggle #moon {
+    display: none;
+}
+
+.dark #theme-toggle #sun {
+    display: block;
+}
+
+#theme-toggle #sun {
+    display: none;
+}
+
+#theme-toggle #moon {
     display: block;
 }
