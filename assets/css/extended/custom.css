@@ -46,7 +46,7 @@
 }
 
 .dark .profile {
-    background: var(--entry);
+    background: transparent;
 }
 
 /* Make sure theme toggle button is visible */
