@@ -1,0 +1,18 @@
+/* Hide dark logo by default (light mode) */
+.profile-image-dark {
+    display: none;
+}
+
+/* Show light logo by default */
+.profile-image-light {
+    display: block;
+}
+
+/* When in dark mode, hide light logo and show dark logo */
+.dark .profile-image-light {
+    display: none;
+}
+
+.dark .profile-image-dark {
+    display: block;
+}
