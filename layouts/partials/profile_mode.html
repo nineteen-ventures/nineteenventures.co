@@ -1,0 +1,59 @@
+{{- with site.Params.profileMode }}
+<div class="profile">
+    {{- if .imageUrl -}}
+    {{- $img := "" }}
+    {{- if not (urls.Parse .imageUrl).Scheme }}
+        {{- $img = (resources.Get .imageUrl) }}
+    {{- end }}
+    <div class="profile_inner">
+        {{- if $img }}
+            {{- $processableFormats := (slice "jpg" "jpeg" "png" "tif" "bmp" "gif") -}}
+            {{- if hugo.IsExtended -}}
+                {{- $processableFormats = $processableFormats | append "webp" -}}
+            {{- end -}}
+            {{- $prod := (hugo.IsProduction | or (eq site.Params.env "production")) }}
+            {{- if and (in $processableFormats $img.MediaType.SubType) (eq $prod true)}}
+                {{- if site.Params.profileMode.imageWidth }}
+                    {{- $img = $img.Resize (printf "%dx" site.Params.profileMode.imageWidth) }}
+                {{- else if site.Params.profileMode.imageHeight }}
+                    {{- $img = $img.Resize (printf "x%d" site.Params.profileMode.imageHeight) }}
+                {{- end }}
+            {{- end }}
+            <!-- Light mode logo -->
+            <img draggable="false" src="{{ $img.Permalink }}" alt="{{ site.Params.profileMode.imageTitle | default site.Title }}" title="{{ site.Params.profileMode.imageTitle | default site.Title }}"
+                height="{{ site.Params.profileMode.imageHeight | default 150 }}"
+                width="{{ site.Params.profileMode.imageWidth | default 150 }}" class="profile-image-light" />
+            <!-- Dark mode logo -->
+            {{- $darkImg := "" }}
+            {{- $darkImgUrl := .imageUrlDark | default (replace .imageUrl "logo-light" "logo-dark") }}
+            {{- if not (urls.Parse $darkImgUrl).Scheme }}
+                {{- $darkImg = (resources.Get $darkImgUrl) }}
+            {{- end }}
+            {{- if $darkImg }}
+                {{- if and (in $processableFormats $darkImg.MediaType.SubType) (eq $prod true)}}
+                    {{- if site.Params.profileMode.imageWidth }}
+                        {{- $darkImg = $darkImg.Resize (printf "%dx" site.Params.profileMode.imageWidth) }}
+                    {{- else if site.Params.profileMode.imageHeight }}
+                        {{- $darkImg = $darkImg.Resize (printf "x%d" site.Params.profileMode.imageHeight) }}
+                    {{- end }}
+                {{- end }}
+                <img draggable="false" src="{{ $darkImg.Permalink }}" alt="{{ site.Params.profileMode.imageTitle | default site.Title }}" title="{{ site.Params.profileMode.imageTitle | default site.Title }}"
+                    height="{{ site.Params.profileMode.imageHeight | default 150 }}"
+                    width="{{ site.Params.profileMode.imageWidth | default 150 }}" class="profile-image-dark" />
+            {{- end }}
+        {{- else }}
+        <img draggable="false" src="{{ .imageUrl }}" alt="{{ .imageTitle | default site.Title }}" title="{{ .imageTitle }}" 
+            height="{{ .imageHeight | default 150 }}" width="{{ .imageWidth | default 150 }}" />
+        {{- end }}
+    </div>
+    {{- end }}
+    <h1>{{ .title | default site.Title }}</h1>
+    <span>{{ .subtitle }}</span>
+    {{- if .buttons }}
+    <div class="buttons">
+        {{- range .buttons }}
+        <a class="button" href="{{ trim .url " " }}" rel="noopener" title="{{ .name }}">
+            <span class="button-inner">
+                {{ .name }}
+                {{- if (findRE "://" .url) }}&nbsp;
+                <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
