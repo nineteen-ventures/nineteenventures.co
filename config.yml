@@ -52,10 +52,10 @@ params:
     cover:
         hiddenInList: false
         hiddenInSingle: true
-    label:
-      text: "Nineteen Ventures"
-      icon: favicon.ico
-      iconHeight: 18
+    # label:
+    # text: "Nineteen Ventures"
+    # icon: favicon.ico
+    # iconHeight: 18
 
 markup:
     goldmark:
