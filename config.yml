@@ -38,7 +38,7 @@ params:
           enabled: true
           title: Nineteen Ventures
           subtitle: "Nineteen Ventures (NV) builds and scales delightful solo and micro businesses. We are people who care deeply about quality, customers, and integrity. We know who we are. We love what we do. We refuse to compromise on important things.<br><br>Got questions or want to chat? Get in touch with us using the email icon below."
-          imageUrl: "nineteen-ventures-logo-square.png"
+          imageUrl: "nineteen-ventures-logo-square-light.png"
           imageWidth: 160
           imageHeight: 160
 
@@ -52,7 +52,7 @@ params:
         hiddenInList: false
         hiddenInSingle: true
     label:
-      text: "Moritz-Maria von Igelfeld"
+      text: "Nineteen Ventures"
       icon: favicon.ico
       iconHeight: 18
 
