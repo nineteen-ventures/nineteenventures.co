@@ -10,9 +10,6 @@ pagination:
 taxonomies:
     tag: tags
 
-menu:
-    main:
-
 params:
     description: "Nineteen Ventures builds and scales delightful solo and micro businesses in tech, marketing, lifstyle, ethical and environmental spaces. "
     author: Nineteen Ventures
@@ -44,7 +41,6 @@ params:
           imageUrl: "nineteen-ventures-logo-square.png"
           imageWidth: 160
           imageHeight: 160
-          buttons:
 
     socialIcons:
         - name: Email
