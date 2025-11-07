@@ -45,7 +45,7 @@ params:
 
     socialIcons:
         - name: Email
-          url: mailto:hello@nineteenventures.co
+          url: mailto:help@nineteenventures.co
        
     assets:
         disableScrollBarStyle: true
