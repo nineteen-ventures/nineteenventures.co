@@ -37,7 +37,7 @@ params:
     profileMode:
           enabled: true
           title: Nineteen Ventures
-          subtitle: "Nineteen Ventures builds and scales delightful solo and micro businesses. We are people who care deeply about customers, quality and integrity. We know who we are. We love what we do. We refuse to compromise on what's important to us.<br><br>Got questions or want to chat? Get in touch with us using the email icon below."
+          subtitle: "Nineteen Ventures builds and scales delightful solo and micro businesses. We are people who care deeply about customers, quality and integrity. We know who we are. We love what we do. We refuse to compromise on what's important to us.<br><br>Got questions or want to chat? Get in touch with us by clicking the email icon below."
           imageUrl: "light-mode-logo.svg"
           imageUrlDark: "dark-mode-logo.svg"
           imageWidth: 160
