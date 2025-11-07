@@ -78,3 +78,29 @@
 #theme-toggle #moon {
     display: block;
 }
+/* Make footer always visible at bottom */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    background: var(--theme);
+    margin-top: auto;
+}
+
+/* Ensure footer stays at bottom in dark mode */
+.dark .footer {
+    background: var(--theme);
+}
